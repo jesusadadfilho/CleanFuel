@@ -1,7 +1,9 @@
-package com.example.jesus.cleanfuel;
+package com.example.jesus.cleanfuel.app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.jesus.cleanfuel.R;
 
 public class MainActivity extends AppCompatActivity {
 

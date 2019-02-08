@@ -1,9 +1,11 @@
-package com.example.jesus.cleanfuel;
+package com.example.jesus.cleanfuel.app;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.jesus.cleanfuel.R;
 
 public class LoginActivity extends AppCompatActivity {
 

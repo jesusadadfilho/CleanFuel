@@ -1,9 +1,11 @@
-package com.example.jesus.cleanfuel;
+package com.example.jesus.cleanfuel.app;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.jesus.cleanfuel.R;
 
 public class SplashActivity extends AppCompatActivity {
 

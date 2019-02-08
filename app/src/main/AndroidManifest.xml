@@ -10,23 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         >
-        <activity android:name=".SplashActivity">
+        <activity android:name=".app.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity android:name=".app.MainActivity"
             android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".LoginActivity"
+        <activity android:name=".app.LoginActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".SingInActivity"
+        <activity android:name=".app.SingInActivity"
             android:screenOrientation="portrait">
         </activity>
     </application>

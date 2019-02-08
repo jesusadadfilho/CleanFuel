@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CleanFuel</string>
+    <string name="clean_flue">Clean Flue</string>
+    <string name="login">Login</string>
+    <string name="usuario">Username</string>
+    <string name="digite_o_sua_senha">Password</string>
+    <string name="logar">SUBMIT</string>
+    <string name="sing_in">Sing in</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="confirm">Confirm</string>
 </resources>

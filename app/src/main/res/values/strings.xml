@@ -10,4 +10,7 @@
     <string name="confirm">Confirm</string>
     <string name="sing_up">Sing Up </string>
     <string name="lo_in">login</string>
+    <string name="username">Username</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

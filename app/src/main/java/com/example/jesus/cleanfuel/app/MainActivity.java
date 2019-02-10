@@ -1,5 +1,10 @@
 package com.example.jesus.cleanfuel.app;
 
+import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -12,6 +17,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jesus.cleanfuel.app.model.Posto;
@@ -28,11 +34,17 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     private GoogleMap mMap;
     private static final String TAG = MainActivity.class.getSimpleName();
     private Toolbar mTopToolbar;
+    private DrawerLayout mDrawerLayout;
+    private NavigationView navigationView;
+    private ActionBarDrawerToggle toggle;
+    private MenuItem item;
+    private TextView userNameText;
+    public SharedPreferences preferences;
 
 
     @Override
@@ -45,6 +57,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         mTopToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mTopToolbar);
+        preferences = getSharedPreferences("dados.file", MODE_PRIVATE);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.navigation_view);
+        userNameText = navigationView.getHeaderView(0).findViewById(R.id.username_perfil);
+        setupDrawer();
     }
 
     @Override
@@ -62,6 +79,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             Toast.makeText(MainActivity.this, "Meus postos favoritos", Toast.LENGTH_LONG).show();
             return true;
         }
+
+        if(toggle.onOptionsItemSelected(item)){
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -99,4 +121,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Toast.makeText(this, "Visitar posto",
                 Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        return false;
+    }
+
+    private void setupDrawer() {
+        toggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.string.open,R.string.close);
+        mDrawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        navigationView.setNavigationItemSelectedListener(this);
+        userNameText.setText(preferences.getString("userName","invalido"));
+    }
+
 }

@@ -6,11 +6,21 @@
     <group
         android:checkableBehavior="single">
         <item
-            android:id="@+id/postos"
-            android:title="Postos"/>
+            android:id="@+id/menu"
+            android:title="menu"
+            android:icon="@drawable/ic_home"
+            >
+
+        </item>
         <item
             android:id="@+id/carro"
-            android:title="Carro"/>
+            android:title="Carro"
+            android:icon="@drawable/ic_car"/>
+
+        <item
+            android:id="@+id/sair"
+            android:title="log out"
+            android:icon="@drawable/ic_exit"/>
     </group>
 
 </menu>

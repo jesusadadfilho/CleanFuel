@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.CadastrarCarroActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/Marca_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Marca"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/modelo_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Modelo:"
+        android:textSize="25sp"/>
+
+    <EditText
+        android:id="@+id/placa_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Placa:"
+        android:textSize="25sp"/>
+
+    <Button
+        android:id="@+id/salvar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:textSize="25sp"
+        android:onClick="salvar"/>
+
+</LinearLayout>

@@ -13,4 +13,5 @@
     <string name="username">Username</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="quali">Qualidade da gasolina:</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.jesus.cleanfuel.app;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -124,6 +125,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int id = menuItem.getItemId();
+
+        if (id == R.id.sair){
+            startActivity(new Intent(this, LoginActivity.class));
+            Toast.makeText(this, "sair", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+        switch (id){
+            case R.id.carro:
+                startActivity(new Intent(this, CarroActivity.class));
+                Toast.makeText(this, "carro", Toast.LENGTH_SHORT).show();
+        }
         return false;
     }
 

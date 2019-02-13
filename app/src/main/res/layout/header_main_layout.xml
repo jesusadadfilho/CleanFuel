@@ -16,6 +16,7 @@
         android:layout_height="100dp"
         android:paddingTop="8dp"
         android:scaleType="centerCrop"
+        android:layout_gravity="center"
         android:src="@drawable/ic_person_black_24dp"/>
 
     <TextView
@@ -24,6 +25,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:text="@string/username"
+        android:gravity="center"
         android:textSize="10pt"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 

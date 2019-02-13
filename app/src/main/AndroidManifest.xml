@@ -34,12 +34,25 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".app.SingInActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity android:name=".app.CarroActivity">
             android:screenOrientation="portrait"
         </activity>
         <activity android:name=".app.CadastrarCarroActivity">
             android:screenOrientation="portrait"
+        </activity>
+        <activity
+            android:name=".app.ItemListActivity"
+            android:label="@string/title_item_list"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".app.ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".app.ItemListActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jesus.cleanfuel.app.ItemListActivity" />
         </activity>
     </application>
 

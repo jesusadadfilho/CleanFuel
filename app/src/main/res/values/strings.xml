@@ -14,4 +14,6 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="quali">Qualidade da gasolina:</string>
+    <string name="title_item_list">Postos</string>
+    <string name="title_item_detail">Posto Detalhes</string>
 </resources>

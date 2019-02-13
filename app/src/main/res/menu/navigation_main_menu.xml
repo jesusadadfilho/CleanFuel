@@ -7,7 +7,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/menu"
-            android:title="menu"
+            android:title="Menu"
             android:icon="@drawable/ic_home"
             >
 
@@ -16,10 +16,14 @@
             android:id="@+id/carro"
             android:title="Carro"
             android:icon="@drawable/ic_car"/>
+        <item
+            android:id="@+id/posto"
+            android:title="Postos"
+            android:icon="@drawable/ic_posto"/>
 
         <item
             android:id="@+id/sair"
-            android:title="log out"
+            android:title="Log out"
             android:icon="@drawable/ic_exit"/>
     </group>
 

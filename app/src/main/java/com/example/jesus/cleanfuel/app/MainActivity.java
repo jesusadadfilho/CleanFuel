@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         int id = item.getItemId();
         if (id == R.id.action_favorite) {
-            Toast.makeText(MainActivity.this, "Meus postos favoritos", Toast.LENGTH_LONG).show();
+             Intent intent = new Intent(this, ItemListActivity.class);
+             startActivity(intent);
             return true;
         }
 
@@ -105,13 +106,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         ArrayList<Posto> postos =  Posto.generate(20);
-        System.out.println("Postos");
-        System.out.println(postos);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(postos.get(0).getLocation()));
 
         for (Posto posto: postos) {
            Marker marker = mMap.addMarker(new MarkerOptions().position(posto.getLocation()).title(posto.getNome()));
-            marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_posto));
+           marker.showInfoWindow();
+           marker.setTag(posto.getMarca());
+           marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_posto));
 
         }
     }
@@ -119,8 +120,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Toast.makeText(this, "Visitar posto",
-                Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ItemDetailActivity.class);
+        intent.putExtra("marca",  String.valueOf(marker.getTag()));
+        startActivity(intent);
     }
 
     @Override
@@ -135,7 +137,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         switch (id){
             case R.id.carro:
                 startActivity(new Intent(this, CarroActivity.class));
-                Toast.makeText(this, "carro", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.posto:
+                startActivity(new Intent(this, ItemListActivity.class));
         }
         return false;
     }
